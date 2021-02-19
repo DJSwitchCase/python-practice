@@ -23,24 +23,41 @@ def zadanie1_2(x):
 
 def zadanie1_3(n, m):
 
-    def firsthalf(n):
+    def first_half(n):
         x = 0
         for i in range(1, n+1):
             x += 75*i**5 + i**8
         return x
 
-    def secondhalf(n, m):
+    def second_half(n, m):
         x = 0
         for i in range(1, n+1):
             for j in range(1, m+1):
                 x += 87*i**7 + math.fabs(i)
         return x
 
-    return 76*firsthalf(n) - secondhalf(n, m)
+    return 76*first_half(n) - second_half(n, m)
 
 
+def zadanie1_4(n):
+    if n == 0:
+        return 9
+    else:
+        return math.sin(zadanie1_4(n-1)) + math.tan(zadanie1_4(n-1))
+
+
+#проверка 1.1
 #print("{:.2e}".format(zadanie1_1(69, -34, 20)))
 #print("{:.2e}".format(zadanie1_1(8, 91, 39)))
+
+#проверка 1.2
 #print("{:.2e}".format(zadanie1_2(181)))
 #print("{:.2e}".format(zadanie1_2(164)))
-print("{:.2e}".format(zadanie1_3(27, 82)))
+
+#проверка 1.3
+#print("{:.2e}".format(zadanie1_3(27, 82)))
+#print("{:.2e}".format(zadanie1_3(36, 66)))
+
+#проверка 1.4
+#print("{:.2e}".format(zadanie1_4(10)))
+#print("{:.2e}".format(zadanie1_4(12)))
