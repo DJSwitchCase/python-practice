@@ -31,8 +31,8 @@ def zadanie1(s):
      for i in s:
          int(i)
          print(i, end=' ')
-     for i in s:
-         print(type(i), end = ' ')
+     #for i in s:
+        #print(type(i), end = ' ')
 
 
 # Подсчитать количество различных элементов в последовательности s.
@@ -62,14 +62,16 @@ def zadanie5(x):
 
 # Найти строку максимальной длины в списке строк s.
 def zadanie6(x):
-    pass
+    print(max(len(i) for i in x))
 
 
 s = ['1', '1', '2', '3', '4', '4', '5']
 x = [1, 7, 2, 3, 4, 5, 3, 2, 1, 1, 5, 6]
+z = ["privet", "kak dela", "alo1"]
 # zadanie1(s)
 # zadanie2(s)
 # zadanie3(s)
 # zadanie4(s, '4')
-zadanie5(x)
+# zadanie5(x)
+zadanie6(z)
 
