@@ -72,7 +72,15 @@ def get_multiple(*keys, dictionary, default=None):
         dictionary.get(key, default)
         for key in keys
     ]
+# транспонирование матрицы
+def transpose_list(list_of_lists):
+    for i in zip(*list_of_lists):
+        print(list(i))
+# только именные аргументы
+def only( * , arg1, arg2):
+    print(arg1, arg2)
 
+                        # main
 s = ['1', '1', '2', '3', '4', '4', '5']
 x = [1, 7, 2, 3, 4, 5, 3, 2, 1, 1, 5, 6]
 z = ["privet", "kak dela", "alo1"]
@@ -82,21 +90,24 @@ z = ["privet", "kak dela", "alo1"]
 # zadanie4(s, '4')
 # zadanie5(x)
 # zadanie6(z)
-
-# для *
-# fruits = {'lemon': 'yellow', 'orange': 'orange', 'tomato': 'red'}
-# print(get_multiple('lemon', 'tomtato', 'tomato', dictionary=fruits, default='unknown'))
-
 #zip()
 '''
 s = 'abc'
 t = (10, 20, 30)
 print(zip(s,t))
 '''
-a = [[0,1,2], [4,5,6]]
-a1 = [0, 1, 2]
-a2 = [4, 5, 6]
-# print(list(zip(a1, a2)))
-# a = np.array([[0, 1, 2], [4, 5, 6]])
-print(a1, a2, sep="\n")
-print(list(zip(a*)))
+# для *
+'''
+ fruits = {'lemon': 'yellow', 'orange': 'orange', 'tomato': 'red'}
+ print(get_multiple('lemon', 'tomtato', 'tomato', dictionary=fruits, default='unknown'))
+'''
+
+# для транспонирования
+'''
+a = [[0,1,2], [4,5,6], [7,8,9]]
+print(*a, sep="\n")
+print("\n")
+transpose_list(a)
+'''
+# именные
+only(arg1=1,arg2=2)
