@@ -1,4 +1,6 @@
-import numpy as np
+import numpy as np #
+import random
+import sys
 #ЛК
 '''
 help (max)
@@ -76,6 +78,37 @@ def get_multiple(*keys, dictionary, default=None):
 def transpose_list(list_of_lists):
     for i in zip(*list_of_lists):
         print(list(i))
+
+# генератор докладов
+def report_generator(n):
+            set1 = ['Коллеги,', 'В тоже время,', 'Однако,', 'Тем не менее', 'Следовательно,', 'Соответственно,',
+                    'Вместе с тем', 'С другой стороны,']
+
+            set2 = ['парадигма цифровой экономики', 'контекст цифровой трансформации',
+                    'диджитализация бизнес-процессов',
+                    'прагматичный подход к цифровым платформам',
+                    'совокупность сквозных технологий',
+                    'программа прорывных исследований',
+                    'ускорение блокчейн-транзакций',
+                    'экспоненциальный рост Big Data']
+
+            set3 = ['открывает новые возможности для', 'выдвигает новые требования',
+                    'несёт в себе риски', 'расширяет горизонты'
+                                          'заставляет искать варианты ', 'не оставляет шанса для',
+                    'повышает вероятность', 'обостряет проблему']
+
+            set5 = ['знаний и компетенций.', 'непроверенных гипотез.',
+                    'волатильных активов.', 'опасных экспериментов.',
+                    'государственно-частных партнёрств.', 'цифровых следов граждан.',
+                    'нежелательных последствий.', 'внезапных открытий.']
+            if n == 1:  # для первого "Коллеги"
+                --n
+                yield set1[0]
+            else:
+                yield random.choice(list(set1))
+            yield random.choice(list(set2))
+            yield random.choice(list(set3))
+            yield random.choice(list(set5))
 # только именные аргументы
 def only( * , arg1, arg2):
     print(arg1, arg2)
@@ -96,6 +129,13 @@ s = 'abc'
 t = (10, 20, 30)
 print(zip(s,t))
 '''
+# генератор докладов
+'''
+generator = report_generator(1)
+generator2 = report_generator(0)
+print(next(generator), next(generator), next(generator), next(generator),  sep=" ")
+print(next(generator2), next(generator2), next(generator2), next(generator2),  sep=" ")
+'''
 # для *
 '''
  fruits = {'lemon': 'yellow', 'orange': 'orange', 'tomato': 'red'}
@@ -109,5 +149,11 @@ print(*a, sep="\n")
 print("\n")
 transpose_list(a)
 '''
+
+# print()
+print(25)
+sys.stdout.write(str(25) + '\n')
+print(25)
+
 # именные
 only(arg1=1,arg2=2)
