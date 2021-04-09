@@ -109,11 +109,53 @@ def report_generator(n):
             yield random.choice(list(set2))
             yield random.choice(list(set3))
             yield random.choice(list(set5))
+
+
+#генератор фамилий
+def nameGenerator():
+    firstname = ['Данил', 'Роман', 'Лев', 'Ильдар', 'Николай', 'Семен',
+             'Самир', 'Тамерлан', 'Святослав', 'Герман', 'Леонид']
+    root = ['Фуц', 'Фецач', 'Шолод', 'Тачас', 'Мугод', 'Таб', 'Чер', 'Тифом', 'Гуз',
+            'Наб', 'Семид', 'Баш', 'Кунар', 'Гид', 'Саб']
+    suffix = ['ий', 'ли', 'як', 'ич', 'ян', 'ко', 'ин']
+
+    yield random.choice(firstname)
+    yield random.choice(root)+random.choice(suffix)
+    print("\n")
+
+
 # только именные аргументы
 def only( * , arg1, arg2):
     print(arg1, arg2)
 
-                        # main
+# array
+def generate_array(dim1, dim2, dim3):
+    a1 = []
+    for k in range(4): #кол-во списков
+        a2 = []
+        for j in range(50):
+            a3 = []
+            for i in range(4): #кол-во элементов в списке
+                a3.append(0)
+            a2.append(a3)
+        a1.append(a3)
+    return a1
+
+#
+def generate_array2():
+    # https://www.ict.social/images/1/csp/basics/3d_array.png куб
+    # https://www.ict.social/python/basics/multidimensional-lists-in-python код
+    cinemas = []
+    for z in range(6): #кол-во сторон фигуры (6 у куба)
+        cinema = []
+        for y in range(4): #кол-во "столбцов" стороны куба
+            column = []
+            for x in range(4): #кол-во "строк" стороны куба
+                column.append(0)
+            cinema.append(column)
+        cinemas.append(cinema)
+    return cinemas
+        # main
 s = ['1', '1', '2', '3', '4', '4', '5']
 x = [1, 7, 2, 3, 4, 5, 3, 2, 1, 1, 5, 6]
 z = ["privet", "kak dela", "alo1"]
@@ -151,9 +193,41 @@ transpose_list(a)
 '''
 
 # print()
+'''
 print(25)
 sys.stdout.write(str(25) + '\n')
 print(25)
+'''
 
 # именные
+'''
 only(arg1=1,arg2=2)
+'''
+
+# генератор фамилий
+'''
+for i in range(6):
+    generator = nameGenerator()
+    print(next(generator), next(generator))
+'''
+#генератор массивов
+dim1 = [1,2,3]
+dim2 = [4,5,6]
+dim3 = [7,8,9]
+#print(generate_array(dim1, dim2, dim3))
+print("\n")
+matrix = generate_array(dim1, dim2, dim3)
+matrix[2][0] = 1
+print (generate_array2())
+
+# print(matrix)
+
+# print(c is d) = False, потому что оператор is проверяет на то, являются ли объекты различными.
+    # Для c и d выделены различные участки памяти, поэтому is выдаёт False
+    # В то же время, оператор == выдаст True, потому что он проверяет значение объектов.
+# a is d = True судя по всему потому, что они и являются одним объектом? Разделяют один участок памяти?
+
+
+# a is c = False, потому что a и c занимают разные участки памяти. Это можно определить с помощью функции id()
+
+
