@@ -142,15 +142,15 @@ def generate_array(dim1, dim2, dim3):
     return a1
 
 #
-def generate_array2():
+def generate_array2(dim1=6, dim2=4, dim3=4):
     # https://www.ict.social/images/1/csp/basics/3d_array.png куб
     # https://www.ict.social/python/basics/multidimensional-lists-in-python код
     cinemas = []
-    for z in range(6): #кол-во сторон фигуры (6 у куба)
+    for z in range(dim1): #кол-во сторон фигуры (6 у куба)
         cinema = []
-        for y in range(4): #кол-во "столбцов" стороны куба
+        for y in range(dim2): #кол-во "столбцов" стороны куба (4)
             column = []
-            for x in range(4): #кол-во "строк" стороны куба
+            for x in range(dim3): #кол-во "строк" стороны куба (4)
                 column.append(0)
             cinema.append(column)
         cinemas.append(cinema)
@@ -211,7 +211,7 @@ for i in range(6):
     print(next(generator), next(generator))
 '''
 #генератор массивов
-print(generate_array2())
+print(generate_array2(2, 3, 3))
 
 # print(matrix)
 
