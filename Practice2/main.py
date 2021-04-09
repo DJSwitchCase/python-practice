@@ -1,3 +1,4 @@
+import numpy as np
 #ЛК
 '''
 help (max)
@@ -65,6 +66,13 @@ def zadanie6(x):
     print(max(len(i) for i in x))
 
 
+# Пример работы *
+def get_multiple(*keys, dictionary, default=None):
+    return [
+        dictionary.get(key, default)
+        for key in keys
+    ]
+
 s = ['1', '1', '2', '3', '4', '4', '5']
 x = [1, 7, 2, 3, 4, 5, 3, 2, 1, 1, 5, 6]
 z = ["privet", "kak dela", "alo1"]
@@ -73,5 +81,22 @@ z = ["privet", "kak dela", "alo1"]
 # zadanie3(s)
 # zadanie4(s, '4')
 # zadanie5(x)
-zadanie6(z)
+# zadanie6(z)
 
+# для *
+# fruits = {'lemon': 'yellow', 'orange': 'orange', 'tomato': 'red'}
+# print(get_multiple('lemon', 'tomtato', 'tomato', dictionary=fruits, default='unknown'))
+
+#zip()
+'''
+s = 'abc'
+t = (10, 20, 30)
+print(zip(s,t))
+'''
+a = [[0,1,2], [4,5,6]]
+a1 = [0, 1, 2]
+a2 = [4, 5, 6]
+# print(list(zip(a1, a2)))
+# a = np.array([[0, 1, 2], [4, 5, 6]])
+print(a1, a2, sep="\n")
+print(list(zip(a*)))
