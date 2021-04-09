@@ -211,14 +211,7 @@ for i in range(6):
     print(next(generator), next(generator))
 '''
 #генератор массивов
-dim1 = [1,2,3]
-dim2 = [4,5,6]
-dim3 = [7,8,9]
-#print(generate_array(dim1, dim2, dim3))
-print("\n")
-matrix = generate_array(dim1, dim2, dim3)
-matrix[2][0] = 1
-print (generate_array2())
+print(generate_array2())
 
 # print(matrix)
 
