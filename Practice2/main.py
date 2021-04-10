@@ -65,7 +65,7 @@ def zadanie5(x):
 
 # Найти строку максимальной длины в списке строк s.
 def zadanie6(x):
-    print(max(len(i) for i in x))
+    print(max(x, key=len))
 
 
 # Пример работы *
@@ -164,10 +164,12 @@ z = ["privet", "kak dela", "alo1"]
 # zadanie3(s)
 # zadanie4(s, '4')
 # zadanie5(x)
-# zadanie6(z)
+zadanie6(z)
+i = 2
+print('mcwuoocdwhe'[i::3]) # 24 символа
 #zip()
 '''
-s = 'abc'
+s i= 'abc'
 t = (10, 20, 30)
 print(zip(s,t))
 '''
@@ -213,8 +215,7 @@ for i in range(6):
 #генератор массивов
 print(generate_array2(2, 3, 3))
 
-# print(matrix)
-
+# теория
 # print(c is d) = False, потому что оператор is проверяет на то, являются ли объекты различными.
     # Для c и d выделены различные участки памяти, поэтому is выдаёт False
     # В то же время, оператор == выдаст True, потому что он проверяет значение объектов.
