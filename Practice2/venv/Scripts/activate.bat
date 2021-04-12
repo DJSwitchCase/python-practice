@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\light\OneDrive\Документы\GitHub\python-practice\Leksiya2\venv
+set VIRTUAL_ENV=C:\Software\Github\python-practice\Practice2Necessary\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
