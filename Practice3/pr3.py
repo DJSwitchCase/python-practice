@@ -1,4 +1,4 @@
-from task2 import C32
+from prtask2 import C32
 
 o = C32()
 o.mass()
@@ -16,7 +16,7 @@ o.leer()
 o.leer()
 o.mass()
 o.mass()
-print(o.leer())
+#print(o.leer())
 
 o2 = C32()
 o2.mass()
@@ -27,11 +27,11 @@ o2.leer()
 o2.leer()
 o2.leer()
 o2.mass()
-print(o2.leer())
+#print(o2.leer())
 o2.leer()
 o2.leer()
 o2.leer()
 o2.leer()
 o2.mass()
 o2.leer()
-print(o2.leer())
+#print(o2.leer())

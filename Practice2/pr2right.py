@@ -59,8 +59,8 @@ def f21(x):
     # c = b[2012]
     # print(c)
     return step_one(tree, x)
-print(f21([1995, 'yacc', 1986, 2013, 'coq']))
-print(f21([2006, 'scaml', 2018, 1980, 'antlr']))
+#print(f21([1995, 'yacc', 1986, 2013, 'coq']))
+#print(f21([2006, 'scaml', 2018, 1980, 'antlr']))
 
 
 # 2.2
@@ -70,9 +70,9 @@ def f22(h):
     c = (h & 0x00038000) << 5
     d = (h & 0x7FFC0000) >> 12
     e = (h & 0x80000000) >> 12
-    print(hex(a+b+c+d+e))
-f22(0x15ee75ee)
-f22(0x05a03b2c)
+    return (hex(a+b+c+d+e))
+#print(f22(0x15ee75ee))
+#print(f22(0x05a03b2c))
 
 
 
@@ -97,7 +97,7 @@ def f23(d):
     d_temp2 = []
     for i in d[0]:
         temp = i[3:6]
-        temp2 = "(" + temp + ") " + i[7:11] + i[12:].replace('-', '')
+        temp2 = "(" + temp + ") " + i[7:12] + i[12:].replace('-', '')
         i = temp2
         d_temp2.append(i)
     d_temp3 = []
@@ -110,11 +110,10 @@ def f23(d):
 
     # вывод
     d.clear()
-    d.append(d_temp2)
-    d.append(d_temp3)
-    d.append(d_temp)
-    print(d)
-    pass
+
+    for i in range(0, len(d_temp)):
+        d.append([d_temp2[i], d_temp3[i], d_temp[i]])
+    return d
 
 
 d = [
@@ -124,5 +123,5 @@ d = [
                                                 ]
 d2 = [[None, '+7 897 871-94-41', '+7 193 088-86-05', '+7 335 467-74-10'],
      ['46%#1', '24%#0', '35%#0']]
-f23(d)
-f23(d2)
+#print(f23(d))
+#print(f23(d2))

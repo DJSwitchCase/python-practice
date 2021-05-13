@@ -2,13 +2,13 @@
 import math
 
 
-def zadanie1_1(x, y, z):
+def f11(x, y, z):
     return ((75*(y**5)+x**8)/(math.log(12*(z**3))-z**8/14))\
            + math.sqrt((y**4+x**7)/(12*x**2-math.sin(z)))\
            + ((59*x**6-55*y)/(math.tan(y)+z/69))
 
 
-def zadanie1_2(x):
+def f12(x):
     if x < -9:
         return 75*x**5 + x**8
     if -9 <= x < 12:
@@ -21,7 +21,7 @@ def zadanie1_2(x):
         return 62*x**2 - 12*x**5 + 3
 
 
-def zadanie1_3(n, m):
+def f13(n, m):
 
     def first_half(n):
         x = 0
@@ -39,11 +39,11 @@ def zadanie1_3(n, m):
     return 76*first_half(n) - second_half(n, m)
 
 
-def zadanie1_4(n):
+def f14(n):
     if n == 0:
         return 9
     else:
-        return math.sin(zadanie1_4(n-1)) + math.tan(zadanie1_4(n-1))
+        return math.sin(f14(n - 1)) + math.tan(f14(n - 1))
 
 
 #проверка 1.1
