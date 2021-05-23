@@ -12,9 +12,9 @@ def step_one(tree, x):
 def step_three(tree, x):
     if type(tree[x[3]]) is dict:
         return step_two(tree[2013], x)
-    if x[3] == 1983:
+    elif x[3] == 1983:
         return tree[x[3]]
-    if x[3] == 1980:
+    elif x[3] == 1980:
         return tree[x[3]]
 
 
@@ -37,7 +37,7 @@ def f21(x):
         'scaml': 10,
         'vhdl': 9,
         'yacc': {
-            'yay': 8,
+            1980: 8,
             1983: 7,
             2013: {
                 2012: 0,
@@ -60,8 +60,10 @@ def f21(x):
     # print(c)
     return step_one(tree, x)
 #print(f21([1995, 'yacc', 1986, 2013, 'coq']))
-#print(f21([2006, 'scaml', 2018, 1980, 'antlr']))
-
+#print(f21([1968, 'yacc', 2018, 2013, 'coq']))
+# [([1995, 'yacc', 1986, 2013, 'coq'], 3), ([2006, 'scaml', 2018, 1980, 'antlr'], 10), ([1995, 'vhdl', 2018, 1983, 'hlsl'], 9),
+#  ([1968, 'yacc', 1986, 1980, 'coq'], 8), ([2006, 'yacc', 1986, 2013, 'hlsl'], 2),
+#  ([1995, 'yacc', 1986, 1983, 'coq'], 7), ([2006, 'yacc', 2012, 2013, 'antlr'], 0), ([1968, 'yacc', 2018, 2013, 'coq'], 4)]
 
 # 2.2
 def f22(h):
@@ -70,7 +72,7 @@ def f22(h):
     c = (h & 0x00038000) << 5
     d = (h & 0x7FFC0000) >> 12
     e = (h & 0x80000000) >> 12
-    return (hex(a+b+c+d+e))
+    return (int(a+b+c+d+e))
 #print(f22(0x15ee75ee))
 #print(f22(0x05a03b2c))
 
