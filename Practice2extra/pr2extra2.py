@@ -1,3 +1,6 @@
+from itertools import groupby
+import pyfiglet
+#Задание 1
 def clean():
     while '$' in bad_subj:
         bad_subj.remove('$')
@@ -19,7 +22,7 @@ clean()
 for i in range(len(bad_subj)):
     if bad_subj[i][1] not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
         bad_subj[i] = "$"
-# Удаляем. Функцию делаем неколько раз, а не сразу, потому что только так работает
+# Удаляем. Функцию делаем несколько раз, а не сразу, потому что так оно работает
 clean()
 for i in range(len(bad_subj)):
     if len(bad_subj[i]) not in [5, 6, 4]:
@@ -36,5 +39,45 @@ for i in range(len(bad_subj)):
     if bad_subj[i][3] in ('к', 'К', 'K', 'k', 'B', 'В', 'в', 'Н', 'н', 'И', 'и', 'м', 'М'):
         bad_subj[i] = "$"
 clean()
-#СЮДА!!!!!!!!!!
+#Вывод
+print("Задание 1:")
 print(bad_subj)
+
+
+#Задание 2
+def rle_encode(data):
+    return [(k, len(list(g))) for k, g in groupby(data)]
+
+def bw_transform(string):
+    cycles = [string]
+    for i in range(len(string) - 1):
+        cycles.append(cycles[-1][-1] + cycles[-1][:-1])
+    cycles.sort() #по умолчанию сортирует лексико-графически
+    string_index = cycles.index(string)
+    last_column = ''.join(s[-1] for s in cycles) #joinим последний элемент каждой строки
+    return last_column, string_index
+
+def bw_inverse(coded_string, string_index):
+    table = list(coded_string)
+    table.sort()
+    for i in range(len(coded_string) - 1):
+        table = [coded_string[i] + table[i] for i in range(len(coded_string))]
+        table.sort()
+    return table[string_index]
+
+#Проверка работы трансформации и инвёрса
+#print(bw_transform('.banana.'), bw_inverse(*bw_transform('.banana')), sep='\n')
+
+#Вывод
+print("Задание 2:")
+print(rle_encode('aaloloookaafds'), rle_encode(bw_transform('aalo')[0]), sep='\n')
+
+
+
+#Задание 3
+def fancy_print(text):
+    figlet = pyfiglet.Figlet(font='standard')
+    print(figlet.renderText(' '.join(text)))
+#Вывод
+print("Задание 3:")
+fancy_print('Kispython')
